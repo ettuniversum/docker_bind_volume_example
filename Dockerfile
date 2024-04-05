@@ -36,7 +36,7 @@ ENV APP_DIR=$APP_DIR_ARG
 # Install pip requirements
 #COPY requirements.develop.txt ./requirements.txt
 COPY /home/lbales/Documents/source_code /app/lode/source_code
-COPY ./buildings/develop/requirements.develop.txt /app/lode//requirements.txt
+COPY ./buildings/develop/requirements.develop.txt /app/lode/requirements.txt
 
 #RUN python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt
 #RUN python3 -m pip install --upgrade pip
