@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  tut2:
+    env_file:
+      - .env
+    container_name: backend
+    image: ${IMAGE_NAME}
+    build:
+      dockerfile: ./Dockerfile
+      args:
+        - USER_ID_ARG=${USER_ID}
+        - USER_NAME_ARG=${USER_NAME}
+        - APP_DIR_ARG=${APP_DIR}
+    ports:
+      - "5678:5678"
+    volumes:
+      - type: bind
+        source: /home/sermin/docker_sermin/docker_python/tut2/lode
+        target: /app/lode
+
+#        - DO_DEBUG_ARG=${DO_DEBUG}
+#        - PY_SRC_NAME_ARG=${PY_SRC_NAME}
+#      - ./buggy:/opt/buggy
+#    environment:
+#      - VAR2=compose
