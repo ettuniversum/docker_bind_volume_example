@@ -1,5 +1,13 @@
 version: '3.8'
 
+volumes:
+  my_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: "/home/lbales/Documents/source_code"
+      o: bind
+
 services:
   tut2:
     env_file:
@@ -16,7 +24,7 @@ services:
       - "5678:5678"
     volumes:
       - type: bind
-        source: /home/sermin/docker_sermin/docker_python/tut2/lode
+        source: /home/lbales/Documents/source_code
         target: /app/lode
 
 #        - DO_DEBUG_ARG=${DO_DEBUG}
